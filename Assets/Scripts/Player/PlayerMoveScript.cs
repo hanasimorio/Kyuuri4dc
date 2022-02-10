@@ -15,7 +15,7 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] BulletScript bullet = default;
 
     float xRate;
-    float speed = 5f;
+    const float speed = 5f;
     bool isMove = false;
 
     float jumpTimer = 0f;
@@ -29,11 +29,13 @@ public class PlayerMoveScript : MonoBehaviour
 
     Rigidbody2D rb;
     Vector2 vect;
+    Animator animator;
     Status status = Status.GROUND;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -66,7 +68,12 @@ public class PlayerMoveScript : MonoBehaviour
         if (isShot) {
             var shot = Instantiate(bullet, transform.position, Quaternion.identity);
             shot.SetDirection(transform.localScale.x);
-            
+        }
+
+
+        animator.SetFloat("Speed", Mathf.Abs(xRate));
+        if (isShot) {
+            animator.SetTrigger("Attack");
         }
     }
 
@@ -138,17 +145,11 @@ public class PlayerMoveScript : MonoBehaviour
                        Color.blue);
         */
 
-        return Physics2D.Linecast
-        (
-            transform.position - transform.right * 0.16f - transform.up * 0.35f,
-            transform.position - transform.right * 0.15f - transform.up * 0.45f,
-            groundLayer
-        )
-        || Physics2D.Linecast
-        (
-            transform.position + transform.right * 0.16f - transform.up * 0.35f,
-            transform.position + transform.right * 0.15f - transform.up * 0.45f,
-            groundLayer
-        );
+        return Physics2D.Linecast(transform.position - transform.right * 0.16f - transform.up * 0.35f,
+                                  transform.position - transform.right * 0.15f - transform.up * 0.45f,
+                                  groundLayer)
+        || Physics2D.Linecast(transform.position + transform.right * 0.16f - transform.up * 0.35f,
+                              transform.position + transform.right * 0.15f - transform.up * 0.45f,
+                              groundLayer);
     }
 }
