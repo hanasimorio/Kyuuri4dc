@@ -5,6 +5,8 @@ using UnityEngine;
 public class TackleEnemyController: MonoBehaviour
 {
 
+    [SerializeField] private float HP = 100;
+
     [SerializeField] private float speed = 10;
 
     private GameObject Player;
@@ -16,6 +18,10 @@ public class TackleEnemyController: MonoBehaviour
     private Rigidbody2D rb;
 
     private float horizontalkey = 0;
+
+    [SerializeField] private GameObject Collider;
+
+    private bool FindPlayer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +49,15 @@ public class TackleEnemyController: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player")&&!FindPlayer)
         {
             Player = collision.gameObject;
             DashPos = EnemyPos.position - Player.transform.position;
+            Destroy(Collider);
 
             if (Player != null)
             {
+                FindPlayer = true;
                 if (DashPos.x > 0)
                 {
                     StartCoroutine(LeftMove());
@@ -61,6 +69,11 @@ public class TackleEnemyController: MonoBehaviour
             }
 
         }
+        else if(collision.gameObject.tag == "Bullet" && FindPlayer)
+        {
+            HP -= 50;
+        }
+
     }
 
     IEnumerator LeftMove()
@@ -81,9 +94,10 @@ public class TackleEnemyController: MonoBehaviour
 
     IEnumerator JudgeTackle()
     {
+        yield return new WaitForSeconds(4f);
         EnemyPos = transform;
         DashPos = EnemyPos.position - Player.transform.position;
-        yield return new WaitForSeconds(4f);
+        
         if (DashPos.x > 0)
         {
             StartCoroutine(LeftMove());

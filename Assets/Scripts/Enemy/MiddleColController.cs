@@ -2,39 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBulletController : MonoBehaviour
+public class MiddleColController : MonoBehaviour
 {
 
-    [SerializeField] private float speed = 5;
+    /*private GameObject parent;
+
+    private MiddleBossController mb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        parent = transform.root.gameObject;
+        mb = parent.GetComponent<MiddleBossController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 Shotpos = transform.position;
-        Shotpos.x -= speed * Time.deltaTime;
-        transform.position = Shotpos;
-
-
-    }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(this.gameObject);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            mb.Player = collision.gameObject;
+            mb.RandomAT();
         }
     }
+    */
 
 }
