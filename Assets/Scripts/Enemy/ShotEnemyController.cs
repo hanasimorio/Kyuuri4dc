@@ -5,11 +5,17 @@ using UnityEngine;
 public class ShotEnemyController : MonoBehaviour
 {
 
+    [SerializeField] private float HP = 100;
+
     [SerializeField] private GameObject bullet;
 
     [SerializeField] private Transform shotpos;
 
     [SerializeField] private float jumpforce = 300f;
+
+    [SerializeField] private GameObject Col;
+
+    private bool findplayer = false;
 
     private Rigidbody2D rb;
 
@@ -18,7 +24,6 @@ public class ShotEnemyController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        StartCoroutine(Attack());
     }
 
     // Update is called once per frame
@@ -39,6 +44,21 @@ public class ShotEnemyController : MonoBehaviour
         Instantiate(bullet, shotpos.position, shotpos.rotation);
         yield return new WaitForSeconds(3f);
         StartCoroutine(Attack());
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && !findplayer)
+        {
+            StartCoroutine(Attack());
+            Destroy(Col);
+
+        }
+        else if (collision.gameObject.tag == "Bullet" && findplayer)
+        {
+            HP -= 50;
+        }
 
     }
 

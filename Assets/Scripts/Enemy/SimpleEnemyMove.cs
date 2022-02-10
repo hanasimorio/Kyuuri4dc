@@ -6,6 +6,8 @@ public class SimpleEnemyMove : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [SerializeField] private float HP = 100;
+
     [SerializeField] private float speed = 10;
 
     [SerializeField] private float jumpforce = 350f;
@@ -52,5 +54,13 @@ public class SimpleEnemyMove : MonoBehaviour
         StartCoroutine(Move());
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            HP -= 50;
+        }
+    }
 
 }
