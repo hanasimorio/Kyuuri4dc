@@ -19,7 +19,7 @@ public class PlayerMoveScript : MonoBehaviour
     bool isMove = false;
 
     float jumpTimer = 0f;
-    const float jumpPower = 15.5f;
+    const float jumpPower = 15.25f;
     const float gravity = 100f;
     bool isJump = false;
     bool jumpKey = false;
@@ -141,13 +141,13 @@ public class PlayerMoveScript : MonoBehaviour
         return Physics2D.Linecast
         (
             transform.position - transform.right * 0.16f - transform.up * 0.35f,
-            transform.position - transform.right * 0.14f - transform.up * 0.45f,
+            transform.position - transform.right * 0.15f - transform.up * 0.45f,
             groundLayer
         )
         || Physics2D.Linecast
         (
-            transform.position + transform.right * 0.15f - transform.up * 0.35f,
-            transform.position + transform.right * 0.13f - transform.up * 0.45f,
+            transform.position + transform.right * 0.16f - transform.up * 0.35f,
+            transform.position + transform.right * 0.15f - transform.up * 0.45f,
             groundLayer
         );
     }
