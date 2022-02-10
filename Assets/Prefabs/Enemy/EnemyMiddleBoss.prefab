@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 200
-  speed: 2
+  speed: 2.3
   jumpforce: 400
   shotpos: {fileID: 175616432900615887}
   Bullet: {fileID: 7597833178945579522, guid: d574814931ed3184893219d5fe61ab8f, type: 3}

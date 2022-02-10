@@ -131,16 +131,25 @@ public class MiddleBossController : MonoBehaviour
     IEnumerator RightMove()
     {
         horizontalkey = 1;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        rb.AddForce(transform.up * jumpforce);
+        yield return new WaitForSeconds(2f);
+        rb.AddForce(transform.up * jumpforce);
+        yield return new WaitForSeconds(2f);
+        rb.AddForce(transform.up * jumpforce);
+        yield return new WaitForSeconds(1.8f);
         horizontalkey = 0f;
+        rb.velocity = Vector2.zero;
+        RandomAT();
         RandomAT();
     }
 
     IEnumerator JudgeTackle()
     {
+        yield return new WaitForSeconds(4f);
         EnemyPos = transform;
         DashPos = EnemyPos.position - Player.transform.position;
-        yield return new WaitForSeconds(4f);
+        
         if (DashPos.x > 0)
         {
             StartCoroutine(LeftMove());
@@ -182,14 +191,33 @@ public class MiddleBossController : MonoBehaviour
 
     IEnumerator Arrowshot()
     {
+        yield return new WaitForSeconds(2f);
+
+        EnemyPos = transform;
+        DashPos = EnemyPos.position - Player.transform.position;
+
+
         var e = this.gameObject.transform.position;
         var s = e.y + 6;
-        for (int i = 0; i < 30; i++)
+        if (DashPos.x > 0)
+            for (int i = 0; i < 30; i++)
+            {
+                GameObject ar = Instantiate(arrow) as GameObject;
+                int px = Random.Range(-17,-1);　　
+                var left = e.x + px;
+                ar.transform.position = new Vector3(left, s, 0);
+                yield return new WaitForSeconds(.5f);
+            }
+        else if (DashPos.x < 0)
         {
-            GameObject ar = Instantiate(arrow) as GameObject;
-            int px = Random.Range(-9, 10);　　//ボスの設置場所によって変更する必要がある！！！！
-            ar.transform.position = new Vector3(px, s, 0);
-            yield return new WaitForSeconds(.5f);
+            for (int i = 0; i < 30; i++)
+            {
+                GameObject ar = Instantiate(arrow) as GameObject;
+                int px = Random.Range(1, 17);  
+                var right = e.x + px;
+                ar.transform.position = new Vector3(right, s, 0);
+                yield return new WaitForSeconds(.5f);
+            }
         }
         RandomAT();
     }
