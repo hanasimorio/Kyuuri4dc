@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Shot02EnemyController : MonoBehaviour
 {
-    public GameObject player;
+
+    [SerializeField] private float HP = 100;
+    private GameObject player = null;
     
     public GameObject tama;
 
+    [SerializeField] GameObject Col;
+
+    private bool findplayer = false;
   
     [SerializeField] private float targetTime = 1.0f;
     private float currentTime = 0;
@@ -15,21 +20,39 @@ public class Shot02EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        currentTime += Time.deltaTime;
-        if (targetTime < currentTime)
+        if (player != null)
         {
-            currentTime = 0;
-            
-            var pos = this.gameObject.transform.position;
-           
-            var t = Instantiate(tama) as GameObject;
-            
-            t.transform.position = pos;
-           
-            Vector2 vec = player.transform.position - pos;
-            
-            t.GetComponent<Rigidbody2D>().velocity = vec;
+            currentTime += Time.deltaTime;
+            if (targetTime < currentTime)
+            {
+                currentTime = 0;
+
+                var pos = this.gameObject.transform.position;
+
+                var t = Instantiate(tama) as GameObject;
+
+                t.transform.position = pos;
+
+                Vector2 vec = player.transform.position - pos;
+
+                t.GetComponent<Rigidbody2D>().velocity = vec;
+            }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && !findplayer)
+        {
+            player = collision.gameObject;
+            Destroy(Col);
+
+        }
+        else if (collision.gameObject.tag == "Bullet" && findplayer)
+        {
+            HP -= 50;
+        }
+
+    }
+
 }
