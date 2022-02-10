@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    private Vector3 velo;
-    private Rigidbody2D rb;
+    float speed = 10f;
+    float dir;
+    Vector2 vect;
+    Rigidbody2D rb;
 
     private void Start()
     {
@@ -14,32 +16,14 @@ public class BulletScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //rb.velocity = GetVelocity(angle) * speed;
-        //transform.position += velo * Time.deltaTime;
-        //transform.Translate(speed * Time.deltaTime, 0f, 0f);
+        vect.x = dir * speed;
+        rb.velocity = vect;
     }
 
-    /*
-    public void Init(float angle, float speed)
+    public void SetDirection(float direction)
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = GetVelocity(angle);
-        //velo = transform.TransformDirection(new Vector3(speed, speed, 0f).normalized);
-        //Debug.Log(transform.rotation);
-        //Debug.Log(velo);
+        dir = direction;
     }
-
-    private static Vector3 GetVelocity(float angle)
-    {
-        return new Vector3
-        (
-            Mathf.Cos(angle * Mathf.Deg2Rad),
-            Mathf.Sin(angle * Mathf.Deg2Rad),
-            0
-        );
-    }
-    */
-
 
     private void OnBecameInvisible()
     {

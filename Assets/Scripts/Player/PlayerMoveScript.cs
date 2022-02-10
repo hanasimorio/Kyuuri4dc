@@ -19,7 +19,7 @@ public class PlayerMoveScript : MonoBehaviour
     bool isMove = false;
 
     float jumpTimer = 0f;
-    const float jumpPower = 12f;
+    const float jumpPower = 15.5f;
     const float gravity = 100f;
     bool isJump = false;
     bool jumpKey = false;
@@ -56,11 +56,18 @@ public class PlayerMoveScript : MonoBehaviour
             jumpKeyLock = false;
         }
 
-        /*isShot = Input.GetKey("space");
+        if (status == Status.FALL && HitGround()) {
+            status = Status.GROUND;
+            jumpTimer = 0f;
+            jumpKeyLock = true;
+        }
+
+        isShot = Input.GetKeyDown(KeyCode.Z);
         if (isShot) {
             var shot = Instantiate(bullet, transform.position, Quaternion.identity);
-            shot.Init(45f, 10f);
-        }*/
+            shot.SetDirection(transform.localScale.x);
+            
+        }
     }
 
     private void FixedUpdate()
@@ -76,7 +83,6 @@ public class PlayerMoveScript : MonoBehaviour
 
         if (status == Status.GROUND && rb.velocity.y < 0f) {
             status = Status.FALL;
-            vect.y = 0f;
             jumpTimer = 0.1f;
         }
 
@@ -107,10 +113,9 @@ public class PlayerMoveScript : MonoBehaviour
 
             case Status.FALL:
                 jumpTimer += Time.deltaTime;
-                if (rb.velocity.y > -15f) {
-                    vect.y = 0f;
-                    vect.y = -(gravity * Mathf.Pow(jumpTimer, 2.25f));
-                } else {
+                vect.y = 0f;
+                vect.y = -(gravity * Mathf.Pow(jumpTimer, 2f));
+                if (vect.y < -15f) {
                     vect.y = -15f;
                 }
                 break;
@@ -122,12 +127,28 @@ public class PlayerMoveScript : MonoBehaviour
         rb.velocity = vect;
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private bool HitGround()
     {
-        if (status == Status.FALL && col.gameObject.layer == 6) {
-            status = Status.GROUND;
-            jumpTimer = 0f;
-            jumpKeyLock = true;
-        }
+        /*
+        Debug.DrawLine(transform.position - transform.right * 0.16f - transform.up * 0.35f,
+                       transform.position - transform.right * 0.14f - transform.up * 0.45f,
+                       Color.blue);
+        Debug.DrawLine(transform.position + transform.right * 0.15f - transform.up * 0.35f,
+                       transform.position + transform.right * 0.13f - transform.up * 0.45f,
+                       Color.blue);
+        */
+
+        return Physics2D.Linecast
+        (
+            transform.position - transform.right * 0.16f - transform.up * 0.35f,
+            transform.position - transform.right * 0.14f - transform.up * 0.45f,
+            groundLayer
+        )
+        || Physics2D.Linecast
+        (
+            transform.position + transform.right * 0.15f - transform.up * 0.35f,
+            transform.position + transform.right * 0.13f - transform.up * 0.45f,
+            groundLayer
+        );
     }
 }
