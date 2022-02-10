@@ -21,7 +21,6 @@ public class PlayerMoveScript : MonoBehaviour
     float jumpTimer = 0f;
     const float jumpPower = 15.25f;
     const float gravity = 100f;
-    bool isJump = false;
     bool jumpKey = false;
     bool jumpKeyLock = false;
 
@@ -66,7 +65,9 @@ public class PlayerMoveScript : MonoBehaviour
 
         isShot = Input.GetKeyDown(KeyCode.Z);
         if (isShot) {
-            var shot = Instantiate(bullet, transform.position, Quaternion.identity);
+            var shot = Instantiate(bullet,
+                                   transform.position + transform.right * 0.25f * transform.localScale.x,
+                                   Quaternion.identity);
             shot.SetDirection(transform.localScale.x);
         }
 

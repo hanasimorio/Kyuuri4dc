@@ -25,6 +25,12 @@ public class BulletScript : MonoBehaviour
         dir = direction;
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.name);
+        Destroy(gameObject);
+    }
+
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
