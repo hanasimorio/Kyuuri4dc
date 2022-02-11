@@ -154,7 +154,7 @@ MonoBehaviour:
   arrow: {fileID: 4332494174351636405, guid: 16319fe6923bcdf45b573d34dfb85874, type: 3}
   HomingBullet: {fileID: 667411999137466955, guid: ef95832ccdbc8814788ef8fba30111a7, type: 3}
   JudgeCollider: {fileID: 175616432582288284}
-  ScoreItem: {fileID: 6984121301138109858, guid: 629340f96a8fd9e409e60afe6023a636, type: 3}
+  ScoreItem: {fileID: 1302174228121784710, guid: 4c1c561819724bc459fcad09642f85ac, type: 3}
 --- !u!50 &175616432700297538
 Rigidbody2D:
   serializedVersion: 4

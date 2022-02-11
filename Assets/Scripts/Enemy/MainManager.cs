@@ -20,7 +20,7 @@ public class MainManager : MonoBehaviour
 
     private int timebonus = 0;
 
-    [SerializeField] private int DownTime = 10;
+    [SerializeField] private int DownTime = 100;
 
     private void Awake()
     {
@@ -65,8 +65,16 @@ public class MainManager : MonoBehaviour
     {
         lasttime = (int)Mathf.Ceil(time);
         timebonus = MaxTimeBonus - lasttime * DownTime;
-        resultscore = score + timebonus;
-        Debug.Log(resultscore);
+        if (timebonus >= 0)
+        {
+            resultscore = score + timebonus;
+            Debug.Log(resultscore);
+        }
+        else if(timebonus < 0)
+        {
+            resultscore = score;
+            Debug.Log(resultscore);
+        }
     }
 
  
