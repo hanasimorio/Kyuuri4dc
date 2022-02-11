@@ -29,12 +29,14 @@ public class PlayerMoveScript : MonoBehaviour
     Rigidbody2D rb;
     Vector2 vect;
     Animator animator;
+    PlayerStatusScript pss;
     Status status = Status.GROUND;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        pss = GetComponent<PlayerStatusScript>();
     }
 
     private void Update()
@@ -71,6 +73,9 @@ public class PlayerMoveScript : MonoBehaviour
             shot.SetDirection(transform.localScale.x);
         }
 
+        if (Input.GetKeyDown(KeyCode.X)) {
+            pss.SpecialAttack();
+        }
 
         animator.SetFloat("Speed", Mathf.Abs(xRate));
         if (isShot) {
@@ -92,6 +97,9 @@ public class PlayerMoveScript : MonoBehaviour
         if (status == Status.GROUND && rb.velocity.y < 0f) {
             status = Status.FALL;
             jumpTimer = 0.1f;
+        } else if (status == Status.RISE && rb.velocity.y == 0f && jumpTimer > 0.03f) {
+            status = Status.FALL;
+            jumpTimer = 0f;
         }
 
         switch (status) {

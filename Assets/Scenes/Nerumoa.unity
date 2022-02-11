@@ -1822,10 +1822,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425449898389561014, guid: 8719df74d3334a74d8f79ffa2cf87917, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883232246705711103, guid: 8719df74d3334a74d8f79ffa2cf87917, type: 3}
       propertyPath: sliderHP
       value: 
       objectReference: {fileID: 1830687642}
-    - target: {fileID: 7425449898389561014, guid: 8719df74d3334a74d8f79ffa2cf87917, type: 3}
+    - target: {fileID: 7883232246705711103, guid: 8719df74d3334a74d8f79ffa2cf87917, type: 3}
       propertyPath: sliderSP
       value: 
       objectReference: {fileID: 1068417346}
