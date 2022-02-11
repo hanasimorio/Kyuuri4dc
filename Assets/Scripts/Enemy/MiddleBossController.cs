@@ -72,7 +72,7 @@ public class MiddleBossController : MonoBehaviour
         if(HP <= 0)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
-            AS.PlayOneShot(Dead);
+            AudioSource.PlayClipAtPoint(Dead, transform.position);
             Destroy(this.gameObject);
         }
         else if(inside && MainManager.instance.ult)

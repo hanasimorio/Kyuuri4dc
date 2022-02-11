@@ -42,7 +42,7 @@ public class ShotEnemyController : MonoBehaviour
         if(HP <= 0 || inside && MainManager.instance.ult)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
-            AS.PlayOneShot(Dead);
+            AudioSource.PlayClipAtPoint(Dead, transform.position);
             Destroy(this.gameObject);
         }
     }
