@@ -196,7 +196,7 @@ MonoBehaviour:
   HP: 100
   speed: 10
   Collider: {fileID: 3887028260454853707}
-  ScoreItem: {fileID: 6984121301138109858, guid: 629340f96a8fd9e409e60afe6023a636, type: 3}
+  ScoreItem: {fileID: 6984121301138109858, guid: b27f014abb672894297fbedc7c7405d8, type: 3}
   Dead: {fileID: 8300000, guid: 4424ec2b43950c1459f84f99ea144229, type: 3}
 --- !u!82 &-5972094716043817031
 AudioSource:

@@ -10,7 +10,7 @@ public class PlayerStatusScript : MonoBehaviour
     [SerializeField] Slider sliderSP = default;
 
     int maxHP = 10;
-    int maxSP = 5;
+    int maxSP = 8;
     int HP = 1;
     int SP = 0;
     bool fullSP = false;
@@ -76,12 +76,30 @@ public class PlayerStatusScript : MonoBehaviour
             int mana = 1;
             SP += mana;
             sliderSP.value = (float)SP / maxSP;
+        }
 
-            if (SP >= maxSP && fullSP == false) {
-                var SPbar = sliderSP.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject;
-                SPbar.GetComponent<Image>().color = new Color32(255, 116, 0, 255);
-                fullSP = true;
-            }
+        if (col.name == "ScoreItem1500(Clone)") {
+            int mana = 2;
+            SP += mana;
+            sliderSP.value = (float)SP / maxSP;
+        }
+
+        if (col.name == "ScoreItem2500(Clone)") {
+            int mana = 2;
+            SP += mana;
+            sliderSP.value = (float)SP / maxSP;
+        }
+
+        if (col.name == "ScoreItem3000(Clone)") {
+            int mana = 3;
+            SP += mana;
+            sliderSP.value = (float)SP / maxSP;
+        }
+
+        if (SP >= maxSP && fullSP == false) {
+            var SPbar = sliderSP.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject;
+            SPbar.GetComponent<Image>().color = new Color32(255, 116, 0, 255);
+            fullSP = true;
         }
     }
 
