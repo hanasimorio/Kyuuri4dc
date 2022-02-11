@@ -17,6 +17,7 @@ public class PlayerMoveScript : MonoBehaviour
     float xRate;
     [SerializeField] float speed = 50f;
     bool isMove = false;
+    bool isStart = false;
 
     float jumpTimer = 0f;
     const float jumpPower = 17f;
@@ -42,50 +43,67 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void Update()
     {
-        xRate = Input.GetAxisRaw("Horizontal");
-        if (xRate != 0) {
-            isMove = true;
-        } else {
-            isMove = false;
-        }
-
-        if (Input.GetKey("space")) {
-            if (!jumpKeyLock) {
-                jumpKey = true;
-            } else {
-                jumpKey = false;
+        if (isStart)
+        {
+            xRate = Input.GetAxisRaw("Horizontal");
+            if (xRate != 0)
+            {
+                isMove = true;
             }
-        } else {
-            jumpKey = false;
-            jumpKeyLock = false;
-        }
+            else
+            {
+                isMove = false;
+            }
 
-        if (status == Status.FALL && HitGround()) {
-            status = Status.GROUND;
-            jumpTimer = 0f;
-            jumpKeyLock = true;
-        }
+            if (Input.GetKey("space"))
+            {
+                if (!jumpKeyLock)
+                {
+                    jumpKey = true;
+                }
+                else
+                {
+                    jumpKey = false;
+                }
+            }
+            else
+            {
+                jumpKey = false;
+                jumpKeyLock = false;
+            }
 
-        isShot = Input.GetKey(KeyCode.Z);
-        if (isShot && shotTimer <= 0f) {
-            shotTimer = 0.75f;
-            var shot = Instantiate(bullet,
-                                   transform.position + transform.up * 0.05f + transform.right * 0.45f * transform.localScale.x,
-                                   Quaternion.identity);
-            shot.SetDirection(transform.localScale.x);
-        }
+            if (status == Status.FALL && HitGround())
+            {
+                status = Status.GROUND;
+                jumpTimer = 0f;
+                jumpKeyLock = true;
+            }
 
-        if (shotTimer >= 0f) {
-            shotTimer -= Time.deltaTime;
-        }
+            isShot = Input.GetKey(KeyCode.Z);
+            if (isShot && shotTimer <= 0f)
+            {
+                shotTimer = 0.75f;
+                var shot = Instantiate(bullet,
+                                       transform.position + transform.up * 0.05f + transform.right * 0.45f * transform.localScale.x,
+                                       Quaternion.identity);
+                shot.SetDirection(transform.localScale.x);
+            }
 
-        if (Input.GetKeyDown(KeyCode.X)) {
-            pss.SpecialAttack();
-        }
+            if (shotTimer >= 0f)
+            {
+                shotTimer -= Time.deltaTime;
+            }
 
-        animator.SetFloat("Speed", Mathf.Abs(xRate));
-        if (isShot) {
-            animator.SetTrigger("Attack");
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                pss.SpecialAttack();
+            }
+
+            animator.SetFloat("Speed", Mathf.Abs(xRate));
+            if (isShot)
+            {
+                animator.SetTrigger("Attack");
+            }
         }
     }
 
@@ -166,5 +184,11 @@ public class PlayerMoveScript : MonoBehaviour
         || Physics2D.Linecast(transform.position + transform.right * 0.23f - transform.up * 0.55f,
                               transform.position + transform.right * 0.22f - transform.up * 0.75f,
                               groundLayer);
+    }
+
+
+    public void MoveStart()
+    {
+        isStart = true;
     }
 }

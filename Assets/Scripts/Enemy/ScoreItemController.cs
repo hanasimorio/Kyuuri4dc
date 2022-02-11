@@ -23,7 +23,7 @@ public class ScoreItemController : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 MainManager.instance.UpScore(myscore);
-                AS.PlayOneShot(AC);
+                AudioSource.PlayClipAtPoint(AC,transform.position);
                 Destroy(this.gameObject);
                 
             }

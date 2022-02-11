@@ -21,7 +21,7 @@ public class BossScoreItem : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-                AS.PlayOneShot(AC);
+                AudioSource.PlayClipAtPoint(AC, transform.position);
                 MainManager.instance.UpScore(myscore);
                 MainManager.instance.TimeStop();
                 MainManager.instance.finishscore() ;
