@@ -10,6 +10,7 @@ public class Operatetext : MonoBehaviour
 
     private bool StartClick = false;
 
+  
     private Text text;
 
     private float C = 0;
@@ -17,6 +18,7 @@ public class Operatetext : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         text = GetComponent<Text>();
     }
 
@@ -33,6 +35,9 @@ public class Operatetext : MonoBehaviour
         else if(StartClick)
         {
             C -= Time.fixedDeltaTime;
+
+            
+
             text.color = new Color(1, 1, 1, C);
 
         }
@@ -51,7 +56,10 @@ public class Operatetext : MonoBehaviour
 
     public void OnStart()
     {
-        C = 1.0f;
+        if(C > 1.0f)
+        {
+            C = 1.0f;
+        }
         OperateClick = false;
         StartClick = true;
         StartCoroutine(Des());
