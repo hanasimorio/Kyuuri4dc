@@ -23,6 +23,8 @@ public class TackleEnemyController: MonoBehaviour
 
     private bool FindPlayer = false;
 
+    [SerializeField] private GameObject ScoreItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,13 @@ public class TackleEnemyController: MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+
+        if(HP <= 0)
+        {
+            Instantiate(ScoreItem, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

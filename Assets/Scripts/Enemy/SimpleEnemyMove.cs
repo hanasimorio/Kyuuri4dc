@@ -16,6 +16,8 @@ public class SimpleEnemyMove : MonoBehaviour
 
     private float horizontalkey = 0;
 
+    [SerializeField] private GameObject ScoreItem;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -37,6 +39,13 @@ public class SimpleEnemyMove : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+
+        if(HP <= 0)
+        {
+            Instantiate(ScoreItem, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+
     }
 
     IEnumerator Move()
@@ -57,9 +66,9 @@ public class SimpleEnemyMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Bullet")
         {
-            HP -= 50;
+            HP -= 100;
         }
     }
 

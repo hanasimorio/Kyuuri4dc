@@ -139,6 +139,7 @@ MonoBehaviour:
   tama: {fileID: 7597833178945579522, guid: d574814931ed3184893219d5fe61ab8f, type: 3}
   Col: {fileID: 8991120927637909086}
   targetTime: 2
+  ScoreItem: {fileID: 6984121301138109858, guid: 629340f96a8fd9e409e60afe6023a636, type: 3}
 --- !u!1 &8991120927637909086
 GameObject:
   m_ObjectHideFlags: 0

@@ -185,3 +185,4 @@ MonoBehaviour:
   HP: 100
   speed: 10
   Collider: {fileID: 3887028260454853707}
+  ScoreItem: {fileID: 6984121301138109858, guid: 629340f96a8fd9e409e60afe6023a636, type: 3}

@@ -141,6 +141,7 @@ MonoBehaviour:
   shotpos: {fileID: 3455121062048775524}
   jumpforce: 300
   Col: {fileID: 6521070220721926553}
+  ScoreItem: {fileID: 6984121301138109858, guid: 629340f96a8fd9e409e60afe6023a636, type: 3}
 --- !u!1 &3455121062048775525
 GameObject:
   m_ObjectHideFlags: 0

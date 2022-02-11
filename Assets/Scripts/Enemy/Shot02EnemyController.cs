@@ -17,6 +17,8 @@ public class Shot02EnemyController : MonoBehaviour
     [SerializeField] private float targetTime = 1.0f;
     private float currentTime = 0;
 
+    [SerializeField] private GameObject ScoreItem;
+
     // Update is called once per frame
     void Update()
     {
@@ -38,6 +40,14 @@ public class Shot02EnemyController : MonoBehaviour
                 t.GetComponent<Rigidbody2D>().velocity = vec;
             }
         }
+
+        if(HP <= 0)
+        {
+            Instantiate(ScoreItem, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

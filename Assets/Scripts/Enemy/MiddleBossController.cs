@@ -33,6 +33,8 @@ public class MiddleBossController : MonoBehaviour
 
     [SerializeField] private GameObject JudgeCollider;
 
+    [SerializeField] private GameObject ScoreItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,7 @@ public class MiddleBossController : MonoBehaviour
 
         if(HP <= 0)
         {
+            Instantiate(ScoreItem, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
 
