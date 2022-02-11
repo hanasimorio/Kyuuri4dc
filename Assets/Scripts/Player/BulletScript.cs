@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    float speed = 10f;
+    float speed = 12f;
     float dir;
     Vector2 vect;
     Rigidbody2D rb;

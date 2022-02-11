@@ -15,11 +15,11 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] BulletScript bullet = default;
 
     float xRate;
-    [SerializeField] float speed = 12f;
+    [SerializeField] float speed = 30f;
     bool isMove = false;
 
     float jumpTimer = 0f;
-    const float jumpPower = 15f;
+    const float jumpPower = 17f;
     const float gravity = 90f;
     bool jumpKey = false;
     bool jumpKeyLock = false;
@@ -68,7 +68,7 @@ public class PlayerMoveScript : MonoBehaviour
         isShot = Input.GetKeyDown(KeyCode.Z);
         if (isShot) {
             var shot = Instantiate(bullet,
-                                   transform.position + transform.right * 0.25f * transform.localScale.x,
+                                   transform.position + transform.up * 0.05f + transform.right * 0.45f * transform.localScale.x,
                                    Quaternion.identity);
             shot.SetDirection(transform.localScale.x);
         }
@@ -146,19 +146,19 @@ public class PlayerMoveScript : MonoBehaviour
     private bool HitGround()
     {
         /*
-        Debug.DrawLine(transform.position - transform.right * 0.16f - transform.up * 0.35f,
-                       transform.position - transform.right * 0.14f - transform.up * 0.45f,
+        Debug.DrawLine(transform.position - transform.right * 0.23f - transform.up * 0.55f,
+                       transform.position - transform.right * 0.22f - transform.up * 0.75f,
                        Color.blue);
-        Debug.DrawLine(transform.position + transform.right * 0.15f - transform.up * 0.35f,
-                       transform.position + transform.right * 0.13f - transform.up * 0.45f,
+        Debug.DrawLine(transform.position + transform.right * 0.23f - transform.up * 0.55f,
+                       transform.position + transform.right * 0.22f - transform.up * 0.75f,
                        Color.blue);
         */
 
-        return Physics2D.Linecast(transform.position - transform.right * 0.16f - transform.up * 0.35f,
-                                  transform.position - transform.right * 0.15f - transform.up * 0.45f,
+        return Physics2D.Linecast(transform.position - transform.right * 0.23f - transform.up * 0.55f,
+                                  transform.position - transform.right * 0.22f - transform.up * 0.75f,
                                   groundLayer)
-        || Physics2D.Linecast(transform.position + transform.right * 0.16f - transform.up * 0.35f,
-                              transform.position + transform.right * 0.15f - transform.up * 0.45f,
+        || Physics2D.Linecast(transform.position + transform.right * 0.23f - transform.up * 0.55f,
+                              transform.position + transform.right * 0.22f - transform.up * 0.75f,
                               groundLayer);
     }
 }

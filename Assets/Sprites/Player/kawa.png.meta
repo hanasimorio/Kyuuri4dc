@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 1ad460787df971e44976d77eaea739c1
+guid: 04fcde625f4482243be0daa6580bfcf2
 TextureImporter:
   internalIDToNameTable:
+  - first:
+      213: -7053589485575023823
+    second: kawa_0
+  - first:
+      213: 6315865011566638488
+    second: kawa_1
+  - first:
+      213: -2162382625722853671
+    second: kawa_2
+  - first:
+      213: 5883553562773716945
+    second: kawa_3
   - first:
       213: 6375204868650628319
     second: kawa_4
@@ -186,7 +198,7 @@ TextureImporter:
         width: 2077
         height: 2466
       alignment: 9
-      pivot: {x: 0.38731095, y: 0.48904842}
+      pivot: {x: 0.38947824, y: 0.48904848}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
