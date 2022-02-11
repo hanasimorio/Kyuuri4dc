@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myscore: 1000
+  AC: {fileID: 8300000, guid: 2dd5e5539ec71634fb4d9813862fea8d, type: 3}
 --- !u!61 &3850273224163101318
 BoxCollider2D:
   m_ObjectHideFlags: 0

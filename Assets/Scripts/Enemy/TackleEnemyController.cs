@@ -25,11 +25,16 @@ public class TackleEnemyController: MonoBehaviour
 
     [SerializeField] private GameObject ScoreItem;
 
+    [SerializeField] private AudioClip Dead;
+
+    private AudioSource AS;
+
     // Start is called before the first frame update
     void Start()
     {
         EnemyPos = transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        AS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +56,7 @@ public class TackleEnemyController: MonoBehaviour
         if(HP <= 0)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
+            AS.PlayOneShot(Dead);
             Destroy(this.gameObject);
         }
 

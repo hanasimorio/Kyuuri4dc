@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -42,6 +43,9 @@ public class MainManager : MonoBehaviour
             time += Time.deltaTime;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+            EndGame();
+
     }
 
 
@@ -75,12 +79,15 @@ public class MainManager : MonoBehaviour
             resultscore = score;
             Debug.Log(resultscore);
         }
+
+        ChangeResult();
     }
 
     public void DeadScore()
     {
         timebonus = 0;
         resultscore = score;
+        ChangeResult();
     }
 
     public void ScoreReset()
@@ -92,6 +99,21 @@ public class MainManager : MonoBehaviour
         timebonus = 0;
     }
 
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
+
+    private void ChangeResult()
+    {
+        SceneManager.LoadScene("ResultScene");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("38scene");
+    }
 
 
 }

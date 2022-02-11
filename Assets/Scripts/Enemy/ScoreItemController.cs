@@ -7,6 +7,15 @@ public class ScoreItemController : MonoBehaviour
 
     [SerializeField] private int myscore;
 
+    [SerializeField] private AudioClip AC;
+
+    private AudioSource AS;
+
+    private void Start()
+    {
+        AS = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (MainManager.instance != null)
@@ -14,7 +23,7 @@ public class ScoreItemController : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 MainManager.instance.UpScore(myscore);
-                MainManager.instance.TimeStart();
+                AS.PlayOneShot(AC);
                 Destroy(this.gameObject);
                 
             }

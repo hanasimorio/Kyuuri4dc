@@ -35,11 +35,20 @@ public class MiddleBossController : MonoBehaviour
 
     [SerializeField] private GameObject ScoreItem;
 
+    [SerializeField] private AudioClip Dead;
+
+    [SerializeField] private AudioClip ShotAudio;
+
+    [SerializeField] private AudioClip Jump;
+
+    private AudioSource AS;
+
     // Start is called before the first frame update
     void Start()
     {
         EnemyPos = transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        AS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,6 +70,7 @@ public class MiddleBossController : MonoBehaviour
         if(HP <= 0)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
+            AS.PlayOneShot(Dead);
             Destroy(this.gameObject);
         }
 
@@ -121,10 +131,13 @@ public class MiddleBossController : MonoBehaviour
         horizontalkey = -1;
         yield return new WaitForSeconds(0.5f);
         rb.AddForce(transform.up * jumpforce);
+        AS.PlayOneShot(Jump);
         yield return new WaitForSeconds(2f);
         rb.AddForce(transform.up * jumpforce);
+        AS.PlayOneShot(Jump);
         yield return new WaitForSeconds(2f);
         rb.AddForce(transform.up * jumpforce);
+        AS.PlayOneShot(Jump);
         yield return new WaitForSeconds(1.8f);
         horizontalkey = 0f;
         rb.velocity = Vector2.zero;
@@ -136,10 +149,13 @@ public class MiddleBossController : MonoBehaviour
         horizontalkey = 1;
         yield return new WaitForSeconds(0.5f);
         rb.AddForce(transform.up * jumpforce);
+        AS.PlayOneShot(Jump);
         yield return new WaitForSeconds(2f);
         rb.AddForce(transform.up * jumpforce);
+        AS.PlayOneShot(Jump);
         yield return new WaitForSeconds(2f);
         rb.AddForce(transform.up * jumpforce);
+        AS.PlayOneShot(Jump);
         yield return new WaitForSeconds(1.8f);
         horizontalkey = 0f;
         rb.velocity = Vector2.zero;
@@ -190,6 +206,7 @@ public class MiddleBossController : MonoBehaviour
         Vector2 vec = Player.transform.position - pos;
 
         t.GetComponent<Rigidbody2D>().velocity = vec;
+        AS.PlayOneShot(ShotAudio);
     }
 
     IEnumerator Arrowshot()
@@ -230,10 +247,13 @@ public class MiddleBossController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Instantiate(HomingBullet, shotpos.position, shotpos.rotation);
+        AS.PlayOneShot(ShotAudio);
         yield return new WaitForSeconds(2f);
         Instantiate(HomingBullet, shotpos.position, shotpos.rotation);
+        AS.PlayOneShot(ShotAudio);
         yield return new WaitForSeconds(2f);
         Instantiate(HomingBullet, shotpos.position, shotpos.rotation);
+        AS.PlayOneShot(ShotAudio);
         yield return new WaitForSeconds(2f);
         RandomAT();
 

@@ -21,11 +21,17 @@ public class ShotEnemyController : MonoBehaviour
 
     [SerializeField] private GameObject ScoreItem;
 
+    [SerializeField] private AudioClip Dead;
+
+    [SerializeField] private AudioClip Shot;
+
+    private AudioSource AS;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        AS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +40,7 @@ public class ShotEnemyController : MonoBehaviour
         if(HP <= 0)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
+            AS.PlayOneShot(Dead);
             Destroy(this.gameObject);
         }
     }
@@ -42,12 +49,15 @@ public class ShotEnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Instantiate(bullet, shotpos.position, shotpos.rotation);
+        AS.PlayOneShot(Shot);
         yield return new WaitForSeconds(1f);
         Instantiate(bullet, shotpos.position, shotpos.rotation);
+        AS.PlayOneShot(Shot);
         yield return new WaitForSeconds(1f);
         rb.AddForce(transform.up * jumpforce);
         yield return new WaitForSeconds(0.5f);
         Instantiate(bullet, shotpos.position, shotpos.rotation);
+        AS.PlayOneShot(Shot);
         yield return new WaitForSeconds(3f);
         StartCoroutine(Attack());
 

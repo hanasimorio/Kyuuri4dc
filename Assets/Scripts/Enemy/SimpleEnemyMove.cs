@@ -18,9 +18,14 @@ public class SimpleEnemyMove : MonoBehaviour
 
     [SerializeField] private GameObject ScoreItem;
 
+    [SerializeField] private AudioClip Dead;
+
+    private AudioSource AS;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        AS = GetComponent<AudioSource>();
         StartCoroutine(Move());
     }
 
@@ -43,6 +48,7 @@ public class SimpleEnemyMove : MonoBehaviour
         if(HP <= 0)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
+            AS.PlayOneShot(Dead);
             Destroy(this.gameObject);
         }
 

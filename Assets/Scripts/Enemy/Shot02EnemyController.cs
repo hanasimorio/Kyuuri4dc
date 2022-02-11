@@ -23,6 +23,17 @@ public class Shot02EnemyController : MonoBehaviour
 
     [SerializeField] private float arrowDistance = 10;
 
+    [SerializeField] private AudioClip Dead;
+
+    [SerializeField] private AudioClip Shot;
+
+    private AudioSource AS;
+
+    private void Start()
+    {
+        AS = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -44,12 +55,15 @@ public class Shot02EnemyController : MonoBehaviour
                 distance = vec.magnitude;
 
                 t.GetComponent<Rigidbody2D>().velocity = vec;
+
+                AS.PlayOneShot(Shot);
             }
         }
 
         if(HP <= 0)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
+            AS.PlayOneShot(Dead);
             Destroy(this.gameObject);
         }
 
