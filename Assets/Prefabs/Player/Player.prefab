@@ -116,10 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a658d4a943ee2474187f0d749b153a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
-  maxSP: 5
   sliderHP: {fileID: 0}
   sliderSP: {fileID: 0}
+  explosion: {fileID: 3541995083935812494, guid: 3c990144182ca944cb319528bc6908f5, type: 3}
 --- !u!50 &6711921148046044078
 Rigidbody2D:
   serializedVersion: 4
