@@ -15,11 +15,11 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] BulletScript bullet = default;
 
     float xRate;
-    [SerializeField] float speed = 12f;
+    [SerializeField] float speed = 20f;
     bool isMove = false;
 
     float jumpTimer = 0f;
-    const float jumpPower = 15f;
+    const float jumpPower = 17f;
     const float gravity = 90f;
     bool jumpKey = false;
     bool jumpKeyLock = false;
