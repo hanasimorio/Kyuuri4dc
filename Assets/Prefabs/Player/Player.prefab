@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderHP: {fileID: 0}
   sliderSP: {fileID: 0}
-  explosion: {fileID: 3541995083935812494, guid: 3c990144182ca944cb319528bc6908f5, type: 3}
+  explosion: {fileID: 0}
 --- !u!50 &6711921148046044078
 Rigidbody2D:
   serializedVersion: 4

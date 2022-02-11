@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    void Start()
-    {
-        gameObject.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
-    }
+    [SerializeField] GameObject cucumber = default;
 
     public void Finish()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        Invoke("ActiveCucumber", 0.2f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ActiveCucumber()
     {
-        
+        cucumber.SetActive(true);
     }
 }

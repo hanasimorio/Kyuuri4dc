@@ -41,9 +41,7 @@ public class PlayerStatusScript : MonoBehaviour
             sliderSP.value = (float)SP / maxSP;
             fullSP = false;
 
-            Debug.Log("ULT");
-            Instantiate(explosion, transform.position, Quaternion.identity);
-
+            explosion.SetActive(true);
 
             MainManager.instance.ult = true;
             Invoke("FinishUlt", 0.5f);
