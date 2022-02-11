@@ -171,7 +171,6 @@ public class MiddleBossController : MonoBehaviour
         horizontalkey = 0f;
         rb.velocity = Vector2.zero;
         RandomAT();
-        RandomAT();
     }
 
     IEnumerator JudgeTackle()
@@ -237,7 +236,7 @@ public class MiddleBossController : MonoBehaviour
                 int px = Random.Range(-17,-1);Å@Å@
                 var left = e.x + px;
                 ar.transform.position = new Vector3(left, s, 0);
-                yield return new WaitForSeconds(.5f);
+                yield return new WaitForSeconds(.2f);
             }
         else if (DashPos.x < 0)
         {
@@ -247,7 +246,7 @@ public class MiddleBossController : MonoBehaviour
                 int px = Random.Range(1, 17);  
                 var right = e.x + px;
                 ar.transform.position = new Vector3(right, s, 0);
-                yield return new WaitForSeconds(.5f);
+                yield return new WaitForSeconds(.2f);
             }
         }
         RandomAT();
