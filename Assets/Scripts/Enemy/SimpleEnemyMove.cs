@@ -76,7 +76,7 @@ public class SimpleEnemyMove : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            HP -= 100;
+            HP -= 50;
         }
     }
 
