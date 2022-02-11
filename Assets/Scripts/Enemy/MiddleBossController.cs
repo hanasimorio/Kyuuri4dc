@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MiddleBossController : MonoBehaviour
 {
@@ -45,12 +46,15 @@ public class MiddleBossController : MonoBehaviour
 
     private bool inside = false;
 
+    private SpriteRenderer SR;
+
     // Start is called before the first frame update
     void Start()
     {
         EnemyPos = transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
         AS = GetComponent<AudioSource>();
+        SR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -97,8 +101,7 @@ public class MiddleBossController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Bullet") && findPlayer)
         {
             HP -= 50;
-
-            Debug.Log(HP);
+            StartCoroutine(DamageColor());
 
         }
 
@@ -279,6 +282,13 @@ public class MiddleBossController : MonoBehaviour
         inside = false;
     }
 
+
+    IEnumerator DamageColor()
+    {
+        SR.color = new Color(1, 0, 0, 1);
+        yield return new WaitForSeconds(0.1f);
+        SR.color = new Color(1, 1, 1, 1);
+    }
 
 
 }
