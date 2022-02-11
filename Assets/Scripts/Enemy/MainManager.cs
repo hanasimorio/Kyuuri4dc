@@ -19,11 +19,11 @@ public class MainManager : MonoBehaviour
 
     public bool ult = false;
 
-    [SerializeField] private int MaxTimeBonus = 6000;
+    [SerializeField] private int MaxTimeBonus = 80000;
 
     public int timebonus = 0;
 
-    [SerializeField] private int DownTime = 100;
+    [SerializeField] private int DownTime = 2000;
 
     private void Awake()
     {
