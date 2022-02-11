@@ -55,6 +55,7 @@ public class Shot02EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !findplayer)
         {
             player = collision.gameObject;
+            findplayer = true;
             Destroy(Col);
 
         }

@@ -42,12 +42,6 @@ public class MainManager : MonoBehaviour
             time += Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TimeStop();
-            finishscore();
-        }
-
     }
 
 

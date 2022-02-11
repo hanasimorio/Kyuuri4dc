@@ -58,6 +58,7 @@ public class ShotEnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !findplayer)
         {
             StartCoroutine(Attack());
+            findplayer = true;
             Destroy(Col);
 
         }

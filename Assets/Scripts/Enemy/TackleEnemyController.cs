@@ -62,6 +62,7 @@ public class TackleEnemyController: MonoBehaviour
         {
             Player = collision.gameObject;
             DashPos = EnemyPos.position - Player.transform.position;
+            FindPlayer = true;
             Destroy(Collider);
 
             if (Player != null)
