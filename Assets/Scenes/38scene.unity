@@ -5325,6 +5325,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 582717766085262570, guid: a16c767f505911e409c915e0f234b9bb, type: 3}
+      propertyPath: DownTime
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 582717766085262570, guid: a16c767f505911e409c915e0f234b9bb, type: 3}
+      propertyPath: MaxTimeBonus
+      value: 60000
+      objectReference: {fileID: 0}
     - target: {fileID: 582717766085262571, guid: a16c767f505911e409c915e0f234b9bb, type: 3}
       propertyPath: m_RootOrder
       value: 21
