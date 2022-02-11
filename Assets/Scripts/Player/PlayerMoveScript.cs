@@ -15,7 +15,7 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] BulletScript bullet = default;
 
     float xRate;
-    [SerializeField] float speed = 30f;
+    [SerializeField] float speed = 50f;
     bool isMove = false;
 
     float jumpTimer = 0f;
