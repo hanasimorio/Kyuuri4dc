@@ -18,7 +18,7 @@ public class BulletScript : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 1.5f) {
+        if (timer >= 0.5f) {
             Destroy(gameObject);
         }
     }
