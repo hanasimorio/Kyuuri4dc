@@ -15,7 +15,7 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] BulletScript bullet = default;
 
     float xRate;
-    [SerializeField] float speed = 20f;
+    [SerializeField] float speed = 30f;
     bool isMove = false;
 
     float jumpTimer = 0f;
@@ -41,13 +41,6 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawLine(transform.position - transform.right * 0.23f - transform.up * 0.6f,
-                       transform.position - transform.right * 0.22f - transform.up * 0.7f,
-                       Color.blue);
-        Debug.DrawLine(transform.position + transform.right * 0.23f - transform.up * 0.6f,
-                       transform.position + transform.right * 0.22f - transform.up * 0.7f,
-                       Color.blue);
-
         xRate = Input.GetAxisRaw("Horizontal");
         if (xRate != 0) {
             isMove = true;
@@ -75,7 +68,7 @@ public class PlayerMoveScript : MonoBehaviour
         isShot = Input.GetKeyDown(KeyCode.Z);
         if (isShot) {
             var shot = Instantiate(bullet,
-                                   transform.position + transform.right * 0.4f * transform.localScale.x,
+                                   transform.position + transform.up * 0.05f + transform.right * 0.45f * transform.localScale.x,
                                    Quaternion.identity);
             shot.SetDirection(transform.localScale.x);
         }
@@ -153,19 +146,19 @@ public class PlayerMoveScript : MonoBehaviour
     private bool HitGround()
     {
         /*
-        Debug.DrawLine(transform.position - transform.right * 0.23f - transform.up * 0.6f,
-                       transform.position - transform.right * 0.22f - transform.up * 0.7f,
+        Debug.DrawLine(transform.position - transform.right * 0.23f - transform.up * 0.55f,
+                       transform.position - transform.right * 0.22f - transform.up * 0.75f,
                        Color.blue);
-        Debug.DrawLine(transform.position + transform.right * 0.23f - transform.up * 0.6f,
-                       transform.position + transform.right * 0.22f - transform.up * 0.7f,
+        Debug.DrawLine(transform.position + transform.right * 0.23f - transform.up * 0.55f,
+                       transform.position + transform.right * 0.22f - transform.up * 0.75f,
                        Color.blue);
         */
 
-        return Physics2D.Linecast(transform.position - transform.right * 0.23f - transform.up * 0.6f,
-                                  transform.position - transform.right * 0.22f - transform.up * 0.7f,
+        return Physics2D.Linecast(transform.position - transform.right * 0.23f - transform.up * 0.55f,
+                                  transform.position - transform.right * 0.22f - transform.up * 0.75f,
                                   groundLayer)
-        || Physics2D.Linecast(transform.position + transform.right * 0.23f - transform.up * 0.6f,
-                              transform.position + transform.right * 0.22f - transform.up * 0.7f,
+        || Physics2D.Linecast(transform.position + transform.right * 0.23f - transform.up * 0.55f,
+                              transform.position + transform.right * 0.22f - transform.up * 0.75f,
                               groundLayer);
     }
 }
