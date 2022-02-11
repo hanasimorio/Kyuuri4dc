@@ -48,6 +48,10 @@ public class PlayerStatusScript : MonoBehaviour
             HP -= damage;
             sliderHP.value = (float)HP / maxHP;
             StartCoroutine("DamagedFlash");
+
+            if (HP <= 0) {
+                MainManager.instance.DeadScore();
+            }
         }
     }
 
@@ -58,6 +62,10 @@ public class PlayerStatusScript : MonoBehaviour
             HP -= damage;
             sliderHP.value = (float)HP / maxHP;
             StartCoroutine("DamagedFlash");
+
+            if (HP <= 0) {
+                MainManager.instance.DeadScore();
+            }
         }
 
         if (col.name == "ScoreItem(Clone)") {
