@@ -17,6 +17,8 @@ public class MainManager : MonoBehaviour
 
     public int resultscore = 0;
 
+    public bool ult = false;
+
     [SerializeField] private int MaxTimeBonus = 6000;
 
     public int timebonus = 0;
