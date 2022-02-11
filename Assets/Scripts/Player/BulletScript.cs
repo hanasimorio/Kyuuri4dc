@@ -27,7 +27,6 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.name);
         Destroy(gameObject);
     }
 
