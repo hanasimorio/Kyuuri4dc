@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerStatusScript : MonoBehaviour
 {
-    [SerializeField] int maxHP = 10;
-    [SerializeField] int maxSP = 5;
+
     [SerializeField] Slider sliderHP = default;
     [SerializeField] Slider sliderSP = default;
 
+    int maxHP = 10;
+    int maxSP = 5;
     int HP = 1;
     int SP = 0;
     bool fullSP = false;

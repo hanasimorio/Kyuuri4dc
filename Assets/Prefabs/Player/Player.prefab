@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 10
-  maxSP: 10
+  maxSP: 5
   sliderHP: {fileID: 0}
   sliderSP: {fileID: 0}
 --- !u!50 &6711921148046044078
