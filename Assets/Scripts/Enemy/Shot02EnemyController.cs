@@ -31,6 +31,7 @@ public class Shot02EnemyController : MonoBehaviour
 
     private bool inside = false;
 
+
     private void Start()
     {
         AS = GetComponent<AudioSource>();
@@ -60,6 +61,16 @@ public class Shot02EnemyController : MonoBehaviour
 
                 AS.PlayOneShot(Shot);
             }
+            else
+            {
+                var pos = this.gameObject.transform.position;
+
+                Vector2 vec = player.transform.position - pos;
+
+                distance = vec.magnitude;
+
+
+            }
         }
 
         if(HP <= 0 || inside && MainManager.instance.ult)
@@ -69,6 +80,7 @@ public class Shot02EnemyController : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        
 
     }
 
