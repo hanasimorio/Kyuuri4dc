@@ -24,7 +24,7 @@ public class PlayerMoveScript : MonoBehaviour
     bool jumpKey = false;
     bool jumpKeyLock = false;
 
-    bool isShot = false;
+    bool canShot = false;
 
     Rigidbody2D rb;
     Vector2 vect;
@@ -65,8 +65,8 @@ public class PlayerMoveScript : MonoBehaviour
             jumpKeyLock = true;
         }
 
-        isShot = Input.GetKeyDown(KeyCode.Z);
-        if (isShot) {
+        
+        if (Input.GetKey(KeyCode.Z)) {
             var shot = Instantiate(bullet,
                                    transform.position + transform.up * 0.05f + transform.right * 0.45f * transform.localScale.x,
                                    Quaternion.identity);
@@ -78,7 +78,7 @@ public class PlayerMoveScript : MonoBehaviour
         }
 
         animator.SetFloat("Speed", Mathf.Abs(xRate));
-        if (isShot) {
+        if (canShot) {
             animator.SetTrigger("Attack");
         }
     }
