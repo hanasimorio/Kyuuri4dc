@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 99018418}
   - component: {fileID: 99018420}
   - component: {fileID: 99018419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: kaidankyu1-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 104431983}
   - component: {fileID: 104431985}
   - component: {fileID: 104431984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 111994741}
   - component: {fileID: 111994740}
   - component: {fileID: 111994739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Block3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +900,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -9.045462, y: 5.0627923}
+    - - {x: 58.0202, y: 5.4439015}
+      - {x: 57.95601, y: 15.226944}
+      - {x: -8.155624, y: 16.232464}
+      - {x: -8.007742, y: 5.9632564}
+      - {x: 33.942066, y: 6.112931}
+      - {x: 33.906876, y: 5.1295004}
+      - {x: -9.045462, y: 5.0627923}
       - {x: -8.923328, y: -5.1335907}
       - {x: 58.016075, y: -4.9867935}
       - {x: 58.057083, y: 5.258334}
@@ -1027,6 +1033,115 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &190379160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190379161}
+  - component: {fileID: 190379163}
+  - component: {fileID: 190379162}
+  m_Layer: 6
+  m_Name: Ashibakyu9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &190379161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190379160}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 113.0153, y: 20.5, z: 0}
+  m_LocalScale: {x: 0.78, y: 0.78, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1994604490}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &190379162
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190379160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 5.12, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!212 &190379163
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190379160}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: ef8bc40d295018d43a1c92ba1664d31a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 2
+  m_Size: {x: 5.12, y: 1.28}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &226991239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1153,7 @@ GameObject:
   - component: {fileID: 226991240}
   - component: {fileID: 226991242}
   - component: {fileID: 226991241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1147,7 +1262,7 @@ GameObject:
   - component: {fileID: 275635857}
   - component: {fileID: 275635858}
   - component: {fileID: 275635859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1477,7 +1592,7 @@ GameObject:
   - component: {fileID: 356719402}
   - component: {fileID: 356719404}
   - component: {fileID: 356719403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1728,7 +1843,7 @@ GameObject:
   - component: {fileID: 514244392}
   - component: {fileID: 514244394}
   - component: {fileID: 514244393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1924,7 +2039,7 @@ GameObject:
   - component: {fileID: 543383294}
   - component: {fileID: 543383296}
   - component: {fileID: 543383295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2177,7 +2292,7 @@ GameObject:
   - component: {fileID: 637222901}
   - component: {fileID: 637222900}
   - component: {fileID: 637222899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2286,7 +2401,7 @@ GameObject:
   - component: {fileID: 644984818}
   - component: {fileID: 644984817}
   - component: {fileID: 644984816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2395,7 +2510,7 @@ GameObject:
   - component: {fileID: 645864284}
   - component: {fileID: 645864286}
   - component: {fileID: 645864285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2539,7 +2654,7 @@ GameObject:
   - component: {fileID: 658222423}
   - component: {fileID: 658222422}
   - component: {fileID: 658222421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2886,7 +3001,7 @@ GameObject:
   - component: {fileID: 766814386}
   - component: {fileID: 766814388}
   - component: {fileID: 766814387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2984,6 +3099,115 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &768830905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768830906}
+  - component: {fileID: 768830908}
+  - component: {fileID: 768830907}
+  m_Layer: 6
+  m_Name: Ashibakyu10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768830906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768830905}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 119.5, y: 22, z: 0}
+  m_LocalScale: {x: 0.78000003, y: 0.78, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1994604490}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &768830907
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768830905}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 6.4, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.4, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!212 &768830908
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768830905}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: ef8bc40d295018d43a1c92ba1664d31a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 2
+  m_Size: {x: 6.4, y: 1.28}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &791612295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,7 +3252,7 @@ GameObject:
   - component: {fileID: 826340904}
   - component: {fileID: 826340903}
   - component: {fileID: 826340905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3137,7 +3361,7 @@ GameObject:
   - component: {fileID: 840538025}
   - component: {fileID: 840538027}
   - component: {fileID: 840538026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3152,7 +3376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840538024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 116, y: 1.5, z: 0}
+  m_LocalPosition: {x: 116.5, y: 1.5, z: 0}
   m_LocalScale: {x: 0.78, y: 0.78, z: 1}
   m_Children: []
   m_Father: {fileID: 1994604490}
@@ -3506,7 +3730,7 @@ GameObject:
   - component: {fileID: 960050601}
   - component: {fileID: 960050603}
   - component: {fileID: 960050602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3615,7 +3839,7 @@ GameObject:
   - component: {fileID: 993318106}
   - component: {fileID: 993318105}
   - component: {fileID: 993318104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3724,7 +3948,7 @@ GameObject:
   - component: {fileID: 1041344529}
   - component: {fileID: 1041344531}
   - component: {fileID: 1041344530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3833,7 +4057,7 @@ GameObject:
   - component: {fileID: 1058937727}
   - component: {fileID: 1058937729}
   - component: {fileID: 1058937728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3942,7 +4166,7 @@ GameObject:
   - component: {fileID: 1065994167}
   - component: {fileID: 1065994170}
   - component: {fileID: 1065994169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4051,7 +4275,7 @@ GameObject:
   - component: {fileID: 1072520565}
   - component: {fileID: 1072520564}
   - component: {fileID: 1072520563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Block2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4199,7 +4423,7 @@ GameObject:
   - component: {fileID: 1116784131}
   - component: {fileID: 1116784133}
   - component: {fileID: 1116784132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: YokoKyu3-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4214,7 +4438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116784130}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 124, y: -0.5, z: 0}
+  m_LocalPosition: {x: 124, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 90552949}
@@ -4594,7 +4818,7 @@ GameObject:
   - component: {fileID: 1309289390}
   - component: {fileID: 1309289389}
   - component: {fileID: 1309289388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4703,7 +4927,7 @@ GameObject:
   - component: {fileID: 1320945547}
   - component: {fileID: 1320945546}
   - component: {fileID: 1320945545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5479,7 +5703,7 @@ GameObject:
   - component: {fileID: 1517093333}
   - component: {fileID: 1517093335}
   - component: {fileID: 1517093334}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5588,7 +5812,7 @@ GameObject:
   - component: {fileID: 1526432226}
   - component: {fileID: 1526432228}
   - component: {fileID: 1526432227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5697,7 +5921,7 @@ GameObject:
   - component: {fileID: 1631890045}
   - component: {fileID: 1631890044}
   - component: {fileID: 1631890043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Block1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5789,7 +6013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631890042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35, y: 7, z: 0}
+  m_LocalPosition: {x: 38.13, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 463937284}
@@ -5837,7 +6061,7 @@ GameObject:
   - component: {fileID: 1660156311}
   - component: {fileID: 1660156313}
   - component: {fileID: 1660156312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: YokoKyu3-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6031,7 +6255,7 @@ GameObject:
   - component: {fileID: 1670275544}
   - component: {fileID: 1670275546}
   - component: {fileID: 1670275545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6140,7 +6364,7 @@ GameObject:
   - component: {fileID: 1689881374}
   - component: {fileID: 1689881376}
   - component: {fileID: 1689881375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689881373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112, y: 3.5, z: 0}
+  m_LocalPosition: {x: 112.5, y: 3.5, z: 0}
   m_LocalScale: {x: 0.78, y: 0.78, z: 1}
   m_Children: []
   m_Father: {fileID: 1994604490}
@@ -6358,7 +6582,7 @@ GameObject:
   - component: {fileID: 1737025151}
   - component: {fileID: 1737025153}
   - component: {fileID: 1737025152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: YokoKyu3-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6467,7 +6691,7 @@ GameObject:
   - component: {fileID: 1812915446}
   - component: {fileID: 1812915448}
   - component: {fileID: 1812915447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: kaidankyu1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6576,7 +6800,7 @@ GameObject:
   - component: {fileID: 1820246974}
   - component: {fileID: 1820246976}
   - component: {fileID: 1820246975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kaidankyu1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6945,7 +7169,7 @@ GameObject:
   - component: {fileID: 1860791463}
   - component: {fileID: 1860791465}
   - component: {fileID: 1860791464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7054,7 +7278,7 @@ GameObject:
   - component: {fileID: 1873047969}
   - component: {fileID: 1873047971}
   - component: {fileID: 1873047970}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: YokoKyu3-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7163,7 +7387,7 @@ GameObject:
   - component: {fileID: 1881284519}
   - component: {fileID: 1881284521}
   - component: {fileID: 1881284520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu1-9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7505,7 +7729,7 @@ GameObject:
   - component: {fileID: 1952325744}
   - component: {fileID: 1952325746}
   - component: {fileID: 1952325745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kaidankyu1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7638,6 +7862,8 @@ Transform:
   - {fileID: 2045606273}
   - {fileID: 840538025}
   - {fileID: 1689881374}
+  - {fileID: 190379161}
+  - {fileID: 768830906}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7694,7 +7920,7 @@ GameObject:
   - component: {fileID: 2034992994}
   - component: {fileID: 2034992997}
   - component: {fileID: 2034992996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7803,7 +8029,7 @@ GameObject:
   - component: {fileID: 2045606273}
   - component: {fileID: 2045606275}
   - component: {fileID: 2045606274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ashibakyu6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8021,7 +8247,7 @@ GameObject:
   - component: {fileID: 2116959165}
   - component: {fileID: 2116959167}
   - component: {fileID: 2116959166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yokokyu2-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
