@@ -25,6 +25,7 @@ public class PlayerMoveScript : MonoBehaviour
     bool jumpKeyLock = false;
 
     bool isShot = false;
+    float shotTimer = 0f;
 
     Rigidbody2D rb;
     Vector2 vect;
@@ -65,12 +66,17 @@ public class PlayerMoveScript : MonoBehaviour
             jumpKeyLock = true;
         }
 
-        isShot = Input.GetKeyDown(KeyCode.Z);
-        if (isShot) {
+        isShot = Input.GetKey(KeyCode.Z);
+        if (isShot && shotTimer <= 0f) {
+            shotTimer = 0.75f;
             var shot = Instantiate(bullet,
                                    transform.position + transform.up * 0.05f + transform.right * 0.45f * transform.localScale.x,
                                    Quaternion.identity);
             shot.SetDirection(transform.localScale.x);
+        }
+
+        if (shotTimer >= 0f) {
+            shotTimer -= Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.X)) {

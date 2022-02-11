@@ -44,7 +44,7 @@ public class PlayerStatusScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy" && !isDamaged) {
-            int damage = Random.Range(1, 3);
+            int damage = 1;
             HP -= damage;
             sliderHP.value = (float)HP / maxHP;
             StartCoroutine("DamagedFlash");
@@ -54,14 +54,14 @@ public class PlayerStatusScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "EnemyBullet" && !isDamaged) {
-            int damage = Random.Range(1, 3);
+            int damage = 1;
             HP -= damage;
             sliderHP.value = (float)HP / maxHP;
             StartCoroutine("DamagedFlash");
         }
 
         if (col.name == "ScoreItem(Clone)") {
-            int mana = Random.Range(1, 3);
+            int mana = 1;
             SP += mana;
             sliderSP.value = (float)SP / maxSP;
 
