@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6711921148046044079}
   - component: {fileID: 6711921148046044072}
   - component: {fileID: 6711921148046044073}
+  - component: {fileID: 7425449898389561014}
   - component: {fileID: 6711921148046044078}
   - component: {fileID: 6711921148046044077}
   - component: {fileID: 6711921148046044076}
@@ -103,6 +104,21 @@ MonoBehaviour:
     m_Bits: 64
   bullet: {fileID: 1074665350629938062, guid: faf00576cd57bfa418188c30f5842bd0, type: 3}
   speed: 5
+--- !u!114 &7425449898389561014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711921148046044074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a658d4a943ee2474187f0d749b153a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  maxSP: 100
+  slider: {fileID: 0}
 --- !u!50 &6711921148046044078
 Rigidbody2D:
   serializedVersion: 4
