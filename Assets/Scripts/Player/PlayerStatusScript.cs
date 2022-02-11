@@ -77,8 +77,15 @@ public class PlayerStatusScript : MonoBehaviour
                 var SPbar = sliderSP.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject;
                 SPbar.GetComponent<Image>().color = new Color32(255, 116, 0, 255);
                 fullSP = true;
+                MainManager.instance.ult = true;
+                Invoke("FinishUlt", 0.5f);
             }
         }
+    }
+
+    private void FinishUlt()
+    {
+        MainManager.instance.ult = false;
     }
 
     IEnumerator DamagedFlash()
