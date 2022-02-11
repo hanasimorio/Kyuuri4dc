@@ -43,6 +43,8 @@ public class MiddleBossController : MonoBehaviour
 
     private AudioSource AS;
 
+    private bool inside = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +75,12 @@ public class MiddleBossController : MonoBehaviour
             AS.PlayOneShot(Dead);
             Destroy(this.gameObject);
         }
+        else if(inside && MainManager.instance.ult)
+        {
+            HP -= 100;
+        }
+
+
 
     }
 
@@ -259,4 +267,18 @@ public class MiddleBossController : MonoBehaviour
 
 
     }
+
+
+    private void OnBecameVisible()
+    {
+        inside = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        inside = false;
+    }
+
+
+
 }

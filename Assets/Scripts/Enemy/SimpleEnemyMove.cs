@@ -22,6 +22,8 @@ public class SimpleEnemyMove : MonoBehaviour
 
     private AudioSource AS;
 
+    private bool inside = false;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -45,13 +47,13 @@ public class SimpleEnemyMove : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        if(HP <= 0)
+        if(HP <= 0 || inside && MainManager.instance.ult)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
             AS.PlayOneShot(Dead);
             Destroy(this.gameObject);
         }
-
+        
     }
 
     IEnumerator Move()
@@ -76,6 +78,16 @@ public class SimpleEnemyMove : MonoBehaviour
         {
             HP -= 100;
         }
+    }
+
+    private void OnBecameVisible()
+    {
+        inside = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        inside = false;
     }
 
 }

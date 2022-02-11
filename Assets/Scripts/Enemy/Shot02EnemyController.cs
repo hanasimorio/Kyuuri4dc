@@ -29,6 +29,8 @@ public class Shot02EnemyController : MonoBehaviour
 
     private AudioSource AS;
 
+    private bool inside = false;
+
     private void Start()
     {
         AS = GetComponent<AudioSource>();
@@ -60,7 +62,7 @@ public class Shot02EnemyController : MonoBehaviour
             }
         }
 
-        if(HP <= 0)
+        if(HP <= 0 || inside && MainManager.instance.ult)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
             AS.PlayOneShot(Dead);
@@ -85,5 +87,16 @@ public class Shot02EnemyController : MonoBehaviour
         }
 
     }
+
+    private void OnBecameVisible()
+    {
+        inside = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        inside = false;
+    }
+
 
 }

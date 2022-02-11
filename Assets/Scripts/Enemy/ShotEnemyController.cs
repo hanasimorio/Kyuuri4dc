@@ -27,6 +27,8 @@ public class ShotEnemyController : MonoBehaviour
 
     private AudioSource AS;
 
+    private bool inside = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class ShotEnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HP <= 0)
+        if(HP <= 0 || inside && MainManager.instance.ult)
         {
             Instantiate(ScoreItem, transform.position, transform.rotation);
             AS.PlayOneShot(Dead);
@@ -78,5 +80,17 @@ public class ShotEnemyController : MonoBehaviour
         }
 
     }
+
+
+    private void OnBecameVisible()
+    {
+        inside = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        inside = false;
+    }
+
 
 }
