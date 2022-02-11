@@ -41,6 +41,13 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void Update()
     {
+        Debug.DrawLine(transform.position - transform.right * 0.23f - transform.up * 0.6f,
+                       transform.position - transform.right * 0.22f - transform.up * 0.7f,
+                       Color.blue);
+        Debug.DrawLine(transform.position + transform.right * 0.23f - transform.up * 0.6f,
+                       transform.position + transform.right * 0.22f - transform.up * 0.7f,
+                       Color.blue);
+
         xRate = Input.GetAxisRaw("Horizontal");
         if (xRate != 0) {
             isMove = true;
@@ -68,7 +75,7 @@ public class PlayerMoveScript : MonoBehaviour
         isShot = Input.GetKeyDown(KeyCode.Z);
         if (isShot) {
             var shot = Instantiate(bullet,
-                                   transform.position + transform.right * 0.25f * transform.localScale.x,
+                                   transform.position + transform.right * 0.4f * transform.localScale.x,
                                    Quaternion.identity);
             shot.SetDirection(transform.localScale.x);
         }
@@ -146,19 +153,19 @@ public class PlayerMoveScript : MonoBehaviour
     private bool HitGround()
     {
         /*
-        Debug.DrawLine(transform.position - transform.right * 0.16f - transform.up * 0.35f,
-                       transform.position - transform.right * 0.14f - transform.up * 0.45f,
+        Debug.DrawLine(transform.position - transform.right * 0.23f - transform.up * 0.6f,
+                       transform.position - transform.right * 0.22f - transform.up * 0.7f,
                        Color.blue);
-        Debug.DrawLine(transform.position + transform.right * 0.15f - transform.up * 0.35f,
-                       transform.position + transform.right * 0.13f - transform.up * 0.45f,
+        Debug.DrawLine(transform.position + transform.right * 0.23f - transform.up * 0.6f,
+                       transform.position + transform.right * 0.22f - transform.up * 0.7f,
                        Color.blue);
         */
 
-        return Physics2D.Linecast(transform.position - transform.right * 0.16f - transform.up * 0.35f,
-                                  transform.position - transform.right * 0.15f - transform.up * 0.45f,
+        return Physics2D.Linecast(transform.position - transform.right * 0.23f - transform.up * 0.6f,
+                                  transform.position - transform.right * 0.22f - transform.up * 0.7f,
                                   groundLayer)
-        || Physics2D.Linecast(transform.position + transform.right * 0.16f - transform.up * 0.35f,
-                              transform.position + transform.right * 0.15f - transform.up * 0.45f,
+        || Physics2D.Linecast(transform.position + transform.right * 0.23f - transform.up * 0.6f,
+                              transform.position + transform.right * 0.22f - transform.up * 0.7f,
                               groundLayer);
     }
 }
