@@ -18,7 +18,7 @@ public class MainManager : MonoBehaviour
 
     [SerializeField] private int MaxTimeBonus = 6000;
 
-    private int timebonus = 0;
+    public int timebonus = 0;
 
     [SerializeField] private int DownTime = 100;
 
@@ -77,6 +77,21 @@ public class MainManager : MonoBehaviour
         }
     }
 
- 
+    public void DeadScore()
+    {
+        timebonus = 0;
+        resultscore = score;
+    }
+
+    public void ScoreReset()
+    {
+        score = 0;
+        time = 0;
+        lasttime = 0;
+        resultscore = 0;
+        timebonus = 0;
+    }
+
+
 
 }

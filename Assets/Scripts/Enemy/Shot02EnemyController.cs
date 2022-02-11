@@ -19,13 +19,17 @@ public class Shot02EnemyController : MonoBehaviour
 
     [SerializeField] private GameObject ScoreItem;
 
+    private float distance = 0;
+
+    [SerializeField] private float arrowDistance = 10;
+
     // Update is called once per frame
     void Update()
     {
         if (player != null)
         {
             currentTime += Time.deltaTime;
-            if (targetTime < currentTime)
+            if (targetTime < currentTime && distance < arrowDistance)
             {
                 currentTime = 0;
 
@@ -36,6 +40,8 @@ public class Shot02EnemyController : MonoBehaviour
                 t.transform.position = pos;
 
                 Vector2 vec = player.transform.position - pos;
+
+                distance = vec.magnitude;
 
                 t.GetComponent<Rigidbody2D>().velocity = vec;
             }
