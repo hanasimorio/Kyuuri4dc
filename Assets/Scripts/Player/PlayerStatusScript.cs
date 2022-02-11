@@ -60,7 +60,7 @@ public class PlayerStatusScript : MonoBehaviour
             StartCoroutine("DamagedFlash");
         }
 
-        if (col.name == "ScoreItem") {
+        if (col.name == "ScoreItem(Clone)") {
             int mana = Random.Range(1, 3);
             SP += mana;
             sliderSP.value = (float)SP / maxSP;
