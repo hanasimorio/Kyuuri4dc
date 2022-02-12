@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class CucumberFrame : MonoBehaviour
 {
     Image image;
-    float alpha = 1;
+    float alpha;
 
     private void OnEnable()
     {
+        alpha = 1;
         image = GetComponent<Image>();
         Invoke("PassiveCucumber", 1.0f);
         StartCoroutine("Invisible");
