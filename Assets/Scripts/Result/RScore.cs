@@ -12,13 +12,9 @@ public class RScore : MonoBehaviour
     void Start()
     {
         s = GameObject.Find("Score");
-<<<<<<< HEAD
         var ss = s.GetComponent<ResultS>();
-=======
-        //var ss = s.GetComponent<ResultScene>();
->>>>>>> 7570f847807c4ca166aa058748ee24c4379afb0d
 
         scoreText = GetComponent<Text>();
-        //scoreText.text = "Score: " + ss.s;
+        scoreText.text = "Score: " + ss.s;
     }
 }
