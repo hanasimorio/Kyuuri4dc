@@ -5,29 +5,18 @@ using UnityEngine.UI;
 
 public class RTime : MonoBehaviour
 {
-    private Text scoreText = null;
-
-    private GameObject s;
-
-    [SerializeField] private float max = 60000;
-
-    [SerializeField] private float down = 100;
+    private Text timeText = null;
 
     void Start()
     {
-        s = GameObject.Find("Score");
-        var ss = s.GetComponent<ResultScene>();
-
-        scoreText = GetComponent<Text>();
-
-        var result = max - down * ss.t;
-
-        if(result < 0)
+        timeText = GetComponent<Text>();
+        if (MainManager.instance != null)
         {
-            result = 0;
+            timeText.text = "TimeBonus: " + MainManager.instance.timebonus;
         }
-
-        scoreText.text = "Time: " + (int)result;
+        else
+        {
+            Destroy(this);
+        }
     }
-
 }
