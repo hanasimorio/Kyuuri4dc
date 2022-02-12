@@ -7,11 +7,10 @@ public class CucumberFrame : MonoBehaviour
 {
     Image image;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         image = GetComponent<Image>();
-        Invoke("PassiveCucumber", 2.5f);
+        //Invoke("PassiveCucumber", 4.0f);
         StartCoroutine("Invisible");
     }
 
@@ -22,11 +21,9 @@ public class CucumberFrame : MonoBehaviour
 
     IEnumerator Invisible()
     {
-        for (int alpha = 255; alpha > 0; alpha--) {
-            Color color = image.color;
-            color.a = alpha;
-            image.color = color;
-            yield return new WaitForSeconds(0.0025f);
+        for (float alpha = 255; alpha > 0; alpha--) {
+            image.color = new Color(255f, 255f, 255f, alpha);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }

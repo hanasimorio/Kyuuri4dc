@@ -9,7 +9,7 @@ public class Explosion : MonoBehaviour
     public void Finish()
     {
         gameObject.SetActive(false);
-        Invoke("ActiveCucumber", 0.2f);
+        Invoke("ActiveCucumber", 0.18f);
     }
 
     private void ActiveCucumber()
