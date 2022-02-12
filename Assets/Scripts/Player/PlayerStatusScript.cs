@@ -8,6 +8,7 @@ public class PlayerStatusScript : MonoBehaviour
 
     [SerializeField] Slider sliderHP = default;
     [SerializeField] Slider sliderSP = default;
+    [SerializeField] GameObject explosion = default;
 
     int maxHP = 10;
     int maxSP = 8;
@@ -40,6 +41,8 @@ public class PlayerStatusScript : MonoBehaviour
             SP = 0;
             sliderSP.value = (float)SP / maxSP;
             fullSP = false;
+
+            explosion.SetActive(true);
 
             MainManager.instance.ult = true;
             Invoke("FinishUlt", 0.5f);

@@ -6,24 +6,27 @@ using UnityEngine.UI;
 public class CucumberFrame : MonoBehaviour
 {
     Image image;
+    float alpha = 1;
 
     private void OnEnable()
     {
         image = GetComponent<Image>();
-        //Invoke("PassiveCucumber", 4.0f);
+        Invoke("PassiveCucumber", 1.0f);
         StartCoroutine("Invisible");
     }
 
     void PassiveCucumber()
     {
-        gameObject.SetActive(false);
+        StartCoroutine("Invisible");
     }
 
     IEnumerator Invisible()
     {
-        for (float alpha = 255; alpha > 0; alpha--) {
+        for (int i = 0; i < 100; i++) {
             image.color = new Color(255f, 255f, 255f, alpha);
-            yield return new WaitForSeconds(0.01f);
+            alpha -= 0.01f;
+            yield return new WaitForSeconds(0.03f);
         }
+        gameObject.SetActive(false);
     }
 }
