@@ -9931,6 +9931,10 @@ PrefabInstance:
       propertyPath: HP
       value: 2500
       objectReference: {fileID: 0}
+    - target: {fileID: 175616432700297540, guid: 0b7c097af1410a34aa80a1a29c1fd6cd, type: 3}
+      propertyPath: ScoreItem
+      value: 
+      objectReference: {fileID: 1302174228121784710, guid: 59dd9ac70a9f8584c9de25e6779e7a4e, type: 3}
     - target: {fileID: 175616432700297543, guid: 0b7c097af1410a34aa80a1a29c1fd6cd, type: 3}
       propertyPath: m_Name
       value: EnemyMiddleBoss
