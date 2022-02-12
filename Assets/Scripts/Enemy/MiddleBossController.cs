@@ -48,6 +48,8 @@ public class MiddleBossController : MonoBehaviour
 
     private SpriteRenderer SR;
 
+    private bool ultCoolTime = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,9 +81,15 @@ public class MiddleBossController : MonoBehaviour
             AudioSource.PlayClipAtPoint(Dead, transform.position);
             Destroy(this.gameObject);
         }
-        else if(inside && MainManager.instance.ult)
+        else if(inside && MainManager.instance.ult && !ultCoolTime)
         {
-            HP -= 100;
+            HP -= 400;
+            StartCoroutine(DamageColor());
+            ultCoolTime = true;
+        }
+        else if (!inside && ultCoolTime)
+        {
+            ultCoolTime = false;
         }
 
 
