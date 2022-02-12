@@ -33,7 +33,7 @@ public class RTime : MonoBehaviour
         }
 
 
-        scoreText.text = "ResultScore: " + (int)result;
+        scoreText.text = "Timebonus: " + (int)result;
         StartCoroutine(OK());
     }
 
