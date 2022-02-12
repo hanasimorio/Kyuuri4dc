@@ -13,7 +13,7 @@ public class MainManager : MonoBehaviour
 
     //private int lasttime = 0;
 
-    private bool Ontime = false;
+    public bool Ontime = false;
 
     public int resultscore = 0;
 
@@ -30,17 +30,17 @@ public class MainManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
     private void Update()
     {
-        if(Ontime)
+        if (Ontime)
         {
             time += Time.deltaTime;
         }
@@ -69,7 +69,7 @@ public class MainManager : MonoBehaviour
 
     public void finishscore()
     {
-        lasttime = (int)Mathf.Ceil(time);
+        /*lasttime = (int)Mathf.Ceil(time);
         timebonus = MaxTimeBonus - lasttime * DownTime;
         if (timebonus >= 0)
         {
@@ -80,7 +80,7 @@ public class MainManager : MonoBehaviour
         {
             resultscore = score;
             Debug.Log(resultscore);
-        }
+        }*/
 
         ChangeResult();
     }
@@ -89,6 +89,8 @@ public class MainManager : MonoBehaviour
     {
         timebonus = 0;
         resultscore = score;
+        time = 600;
+        TimeStop();
         ChangeResult();
     }
 
