@@ -11,7 +11,7 @@ public class MainManager : MonoBehaviour
 
     public  float time = 0;
 
-    private int lasttime = 0;
+    //private int lasttime = 0;
 
     public bool Ontime = false;
 
@@ -19,11 +19,11 @@ public class MainManager : MonoBehaviour
 
     public bool ult = false;
 
-    [SerializeField] private int MaxTimeBonus = 80000;
+    //[SerializeField] private int MaxTimeBonus = 80000;
 
     public int timebonus = 0;
 
-    [SerializeField] private int DownTime = 2000;
+    //[SerializeField] private int DownTime = 2000;
 
     private void Awake()
     {
@@ -98,7 +98,7 @@ public class MainManager : MonoBehaviour
     {
         score = 0;
         time = 0;
-        lasttime = 0;
+        //lasttime = 0;
         resultscore = 0;
         timebonus = 0;
     }
