@@ -34,6 +34,7 @@ public class RResult : MonoBehaviour
         }
 
         var Finish = score + (int)result;
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(Finish);
 
         scoreText.text = "ResultScore: " + Finish;
         StartCoroutine(OK());
