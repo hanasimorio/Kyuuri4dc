@@ -12,6 +12,7 @@ public class TimeTextController : MonoBehaviour
     void Start()
     {
         timeText = GetComponent<Text>();
+
         if (MainManager.instance != null)
         {
             timeText.text = "Time: " + MainManager.instance.time;

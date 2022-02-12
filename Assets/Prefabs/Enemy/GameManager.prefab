@@ -46,5 +46,7 @@ MonoBehaviour:
   score: 0
   time: 0
   resultscore: 0
-  MaxTimeBonus: 6000
-  DownTime: 10
+  ult: 0
+  MaxTimeBonus: 60000
+  timebonus: 0
+  DownTime: 100

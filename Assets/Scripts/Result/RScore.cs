@@ -7,16 +7,14 @@ public class RScore : MonoBehaviour
 {
     private Text scoreText = null;
 
+    private GameObject s;
+
     void Start()
     {
+        s = GameObject.Find("Score");
+        var ss = s.GetComponent<ResultScene>();
+
         scoreText = GetComponent<Text>();
-        if (MainManager.instance != null)
-        {
-            scoreText.text = "Score: " + MainManager.instance.score;
-        }
-        else
-        {
-            Destroy(this);
-        }
+        scoreText.text = "Score: " + ss.s;
     }
 }
